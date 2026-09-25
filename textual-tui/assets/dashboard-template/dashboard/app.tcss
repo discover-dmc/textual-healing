@@ -1,0 +1,28 @@
+/* Semantic variables only ($primary, $surface, ...): themes then restyle everything. */
+
+#items { width: 2fr; }
+
+#detail {
+    width: 1fr;
+    padding: 0 1;
+    border-left: solid $primary-muted;
+}
+#detail-title { text-style: bold; color: $text; }
+#spark { height: 5; margin: 1 0; }
+#spark > .sparkline--max-color { color: $success; }
+#spark > .sparkline--min-color { color: $warning; }
+#log { height: 1fr; }
+
+/* Narrow terminals (SSH, split panes): HORIZONTAL_BREAKPOINTS adds -narrow, drop the detail pane. */
+Screen.-narrow #detail { display: none; }
+Screen.-narrow #items { width: 1fr; }
+
+HelpScreen { align: center middle; }
+#help-box {
+    width: 64;
+    height: auto;
+    border: round $primary;
+    background: $surface;
+    padding: 1 2;
+}
+#help-box .title { text-style: bold; color: $primary; margin-bottom: 1; }
